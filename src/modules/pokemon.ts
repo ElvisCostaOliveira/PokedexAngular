@@ -15,6 +15,7 @@ export class Pokemon {
   genero: string;
   descricao: string;
   imagem: string;
+  imagemdois: string;
   regiao: string;
 
   constructor(
@@ -33,6 +34,7 @@ export class Pokemon {
     genero: string,
     descricao: string,
     imagem: string,
+    imagemdois: string,
     regiao: string,
   ) {
     this.id = id;
@@ -50,6 +52,7 @@ export class Pokemon {
     this.genero = genero;
     this.descricao = descricao;
     this.imagem = imagem;
+    this.imagemdois = imagemdois;
     this.regiao = regiao;
   }
 

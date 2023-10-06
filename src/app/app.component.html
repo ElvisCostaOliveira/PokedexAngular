@@ -1,7 +1,7 @@
 <body>
 
   <div class="container">
-    <h1>{{ mensagem }}</h1>
+    <h1><img class="logo" src="{{ imagem }}" alt="Sua Imagem"></h1>
     <div class="pokedex">
       <div *ngFor="let pokemon of pokemons" class="card" (click)="mostrarDetalhes(pokemon)">
         <h2 class="card-title">{{ pokemon.nome }}</h2>
@@ -12,15 +12,43 @@
   
     <div *ngIf="selectedPokemon" class="modal">
       <div class="modal-content">
-        <span class="close" (click)="fecharModal()">&times;</span>
-        <h2>{{ selectedPokemon.nome }}</h2>
-        <p><strong>Tipo:</strong> {{ selectedPokemon.tipos }}</p>
-        <p><strong>Descrição:</strong> {{ selectedPokemon.descricao }}</p>
+          <span class="close" (click)="fecharModal()">Fechar X</span>
+          <table>
+              <tr>
+                  <td>
+                      <h2>{{ selectedPokemon.nome }}</h2>
+                      <img class="modal-image" [src]="selectedPokemon.imagemdois" alt="{{ selectedPokemon.nome }}">
+                  </td>
+                  <td></td>
+                  <td>
+                      <p><strong>Tipo:</strong> {{ selectedPokemon.tipos }}</p>
+                      <p><strong>Descrição:</strong> {{ selectedPokemon.descricao }}</p>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>
+                    <p><strong>Saúde Total:</strong> {{ selectedPokemon.saudeTotal }}</p>
+                    <p><strong>Ataque Físico:</strong> {{ selectedPokemon.poderAtaqueFisico }}</p>
+                    <p><strong>Resistência Física:</strong> {{ selectedPokemon.resistenciaFisica }}</p>
+                    <p><strong>Ataque Mágico:</strong> {{ selectedPokemon.poderAtaqueMagico }}</p>
+                    <p><strong>Resistência Mágica:</strong> {{ selectedPokemon.resistenciaMagica }}</p>
+                    <p><strong>Rapidez:</strong> {{ selectedPokemon.rapidez }}</p>
+                  </td> 
+                  <td></td>     
+                  <td>
+                    <p><strong>Habilidades Especiais:</strong> {{ selectedPokemon.habilidadesEspeciais }}</p>
+                    <p><strong>Evolução:</strong> {{ selectedPokemon.evolucao }}</p>
+                    <p><strong>Nível:</strong> {{ selectedPokemon.nivel }}</p>
+                    <p><strong>Gênero:</strong> {{ selectedPokemon.genero }}</p>
+                    <p><strong>Região:</strong> {{ selectedPokemon.regiao }}</p>
+                </td>
+              </tr>
+          </table>
       </div>
-    </div>
   </div>
   
-
-
-
+    
+  </div>
+  
 </body>
